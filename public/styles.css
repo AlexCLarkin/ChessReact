@@ -1,0 +1,104 @@
+:root {
+    --white-square: rgb(255, 255, 255);
+    --black-square: rgb(169, 169, 169);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.chess-board {
+    height: 400px;
+    width: 400px;
+    border: 5px solid black;
+    display: inline-grid;
+    font-size: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.chess-square {
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.white-square {
+    background-color: var(--white-square);
+}
+
+.black-square {
+    background-color: var(--black-square);
+}
+
+/*Chess pieces*/
+
+.white-pawn::after {
+    content: "♙";
+    cursor: pointer;
+}
+
+.white-knight::after {
+    content: "♘";
+    cursor: pointer;
+}
+
+.white-bishop::after {
+    content: "♗";
+    cursor: pointer;
+}
+
+.white-rook::after {
+    content: "♖";
+    cursor: pointer;
+}
+
+.white-queen::after {
+    content: "♕";
+    cursor: pointer;
+}
+
+.white-king::after {
+    content: "♔";
+    cursor: pointer;
+}
+
+.black-pawn::after {
+    content: "♟";
+    cursor: pointer;
+}
+
+.black-knight::after {
+    content: "♞";
+    cursor: pointer;
+}
+
+.black-bishop::after {
+    content: "♝";
+    cursor: pointer;
+}
+
+.black-rook::after {
+    content: "♜";
+    cursor: pointer;
+}
+
+.black-queen::after {
+    content: "♛";
+    cursor: pointer;
+}
+
+.black-king::after {
+    content: "♚";
+    cursor: pointer;
+}
