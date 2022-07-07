@@ -1,9 +1,6 @@
 import React from "react";
-import BlackPawn from "./pieces/BlackPawn";
 
-const InitialPostition = () => {
-  let StartButton = document.getElementById("start-button");
-  StartButton.remove();
+const InitialPosition = () => {
   document.getElementById("a8").classList.add("black-rook");
   document.getElementById("b8").classList.add("black-knight");
   document.getElementById("c8").classList.add("black-bishop");
@@ -39,4 +36,4 @@ const InitialPostition = () => {
   document.getElementById("h2").classList.add("white-pawn");
 };
 
-export default InitialPostition;
+export default InitialPosition;
