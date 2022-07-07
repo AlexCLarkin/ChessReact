@@ -115,3 +115,8 @@ body {
     margin: 10px;
     cursor: pointer;
 }
+
+.not-clickable {
+    pointer-events: none;
+    color: blue;
+}

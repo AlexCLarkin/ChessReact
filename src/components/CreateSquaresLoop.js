@@ -12,7 +12,7 @@ const CreateSquareLoop = SquaresData.map((squares) => {
   }
   console.log(classname);
 
-  return <div className={classname}></div>;
+  return <div id={squares.coordinates} className={classname}></div>;
 });
 
 export default CreateSquareLoop;
