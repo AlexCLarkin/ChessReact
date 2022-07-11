@@ -2,12 +2,10 @@ import React from "react";
 
 import ChessBoard from "./ChessBoard";
 import StartGame from "./StartGame";
-import CreateSquareLoop from "./CreateSquaresLoop";
-import Turns from "./Turns";
 import SwitchTurnstest from "./SwitchTurnsTest";
 
 var ButtonText = "Start Game";
-var WhitesTurn = true;
+var WhitesTurn;
 
 class App extends React.Component {
   render() {
