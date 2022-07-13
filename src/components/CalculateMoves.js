@@ -38,12 +38,12 @@ const CalculateMoves = (event) => {
 
     CapturePositionR = findPosition.number + 9;
     let findcapturePositionR = SquaresData.find(
-      (newSquare) => newSquare.number == CapturePositionR
+      (newSquare) => newSquare.number === CapturePositionR
     );
 
     CapturePositionL = findPosition.number + 7;
     let findcapturePositionL = SquaresData.find(
-      (newSquare) => newSquare.number == CapturePositionL
+      (newSquare) => newSquare.number === CapturePositionL
     );
 
     let newPositionId = findnewPosition.coordinates;
@@ -103,12 +103,12 @@ const CalculateMoves = (event) => {
 
     CapturePositionR = findPosition.number - 7;
     let findcapturePositionR = SquaresData.find(
-      (newSquare) => newSquare.number == CapturePositionR
+      (newSquare) => newSquare.number === CapturePositionR
     );
 
     CapturePositionL = findPosition.number - 9;
     let findcapturePositionL = SquaresData.find(
-      (newSquare) => newSquare.number == CapturePositionL
+      (newSquare) => newSquare.number === CapturePositionL
     );
 
     let newPositionId = findnewPosition.coordinates;
