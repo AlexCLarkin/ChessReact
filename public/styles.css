@@ -120,3 +120,9 @@ body {
     pointer-events: none;
     color: blue;
 }
+
+.potential-move {
+    background-color: lightblue;
+    cursor: pointer;
+    pointer-events: all;
+}
