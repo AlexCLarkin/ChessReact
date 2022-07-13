@@ -10,6 +10,8 @@ const CalculateMoves = (event) => {
   var currentPosition = event.target;
   var newPosition;
   var extraPosition;
+  var CapturePositionR;
+  var CapturePositionL;
 
   //cancel move
   if (!currentPosition.classList.contains("potential-move")) {
@@ -34,14 +36,28 @@ const CalculateMoves = (event) => {
       (newSquare) => newSquare.number === extraPosition
     );
 
+    CapturePositionR = findPosition.number + 9;
+    let findcapturePositionR = SquaresData.find(
+      (newSquare) => newSquare.number == CapturePositionR
+    );
+
+    CapturePositionL = findPosition.number + 7;
+    let findcapturePositionL = SquaresData.find(
+      (newSquare) => newSquare.number == CapturePositionL
+    );
+
     let newPositionId = findnewPosition.coordinates;
     let oldPositionId = findPosition.coordinates;
     let extraPositionId = findextraPosition.coordinates;
+    let capturePositionIdR = findcapturePositionR.coordinates;
+    let capturePositionIdL = findcapturePositionL.coordinates;
 
     console.log("bozo" + newPositionId);
     let positionNew = document.getElementById(newPositionId);
     positionOld = document.getElementById(oldPositionId);
     let positionExtra = document.getElementById(extraPositionId);
+    let positionCaptureR = document.getElementById(capturePositionIdR);
+    let positionCaptureL = document.getElementById(capturePositionIdL);
 
     positionNew.classList.add("potential-move");
     if (
@@ -55,6 +71,14 @@ const CalculateMoves = (event) => {
       currentPosition.id === "h7"
     ) {
       positionExtra.classList.add("potential-move");
+    }
+
+    if (positionCaptureR.classList.contains("white-pawn")) {
+      positionCaptureR.classList.add("potential-move");
+    }
+
+    if (positionCaptureL.classList.contains("white-pawn")) {
+      positionCaptureL.classList.add("potential-move");
     }
   }
   //Black pawn END
@@ -77,14 +101,28 @@ const CalculateMoves = (event) => {
       (newSquare) => newSquare.number === extraPosition
     );
 
+    CapturePositionR = findPosition.number - 7;
+    let findcapturePositionR = SquaresData.find(
+      (newSquare) => newSquare.number == CapturePositionR
+    );
+
+    CapturePositionL = findPosition.number - 9;
+    let findcapturePositionL = SquaresData.find(
+      (newSquare) => newSquare.number == CapturePositionL
+    );
+
     let newPositionId = findnewPosition.coordinates;
     let oldPositionId = findPosition.coordinates;
     let extraPositionId = findextraPosition.coordinates;
+    let capturePositionIdR = findcapturePositionR.coordinates;
+    let capturePositionIdL = findcapturePositionL.coordinates;
 
     console.log("bozo" + newPositionId);
     let positionNew = document.getElementById(newPositionId);
     positionOld = document.getElementById(oldPositionId);
     let positionExtra = document.getElementById(extraPositionId);
+    let positionCaptureR = document.getElementById(capturePositionIdR);
+    let positionCaptureL = document.getElementById(capturePositionIdL);
 
     positionNew.classList.add("potential-move");
     if (
@@ -98,6 +136,14 @@ const CalculateMoves = (event) => {
       currentPosition.id === "h2"
     ) {
       positionExtra.classList.add("potential-move");
+    }
+
+    if (positionCaptureR.classList.contains("black-pawn")) {
+      positionCaptureR.classList.add("potential-move");
+    }
+
+    if (positionCaptureL.classList.contains("black-pawn")) {
+      positionCaptureL.classList.add("potential-move");
     }
   }
   // White pawn END
