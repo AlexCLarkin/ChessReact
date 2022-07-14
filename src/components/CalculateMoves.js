@@ -19,7 +19,10 @@ const CalculateMoves = (event) => {
   }
 
   //Calculates potential moves for black pawns
-  if (currentPosition.classList.contains("black-pawn")) {
+  if (
+    currentPosition.classList.contains("black-pawn") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
     SelectedPiece = "black-pawn";
     console.log("Selected piece:" + SelectedPiece);
 
@@ -59,7 +62,11 @@ const CalculateMoves = (event) => {
     let positionCaptureR = document.getElementById(capturePositionIdR);
     let positionCaptureL = document.getElementById(capturePositionIdL);
 
-    positionNew.classList.add("potential-move");
+    if (!positionNew.classList.contains("white-pawn")) {
+      positionNew.classList.add("potential-move");
+    } else {
+      console.log("can't move forward");
+    }
     if (
       currentPosition.id === "a7" ||
       currentPosition.id === "b7" ||
@@ -280,7 +287,10 @@ const CalculateMoves = (event) => {
   //Black Queen END
 
   //Calculates moves for white pawns
-  if (currentPosition.classList.contains("white-pawn")) {
+  if (
+    currentPosition.classList.contains("white-pawn") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
     SelectedPiece = "white-pawn";
     console.log("Selected piece:" + SelectedPiece);
 
@@ -320,7 +330,12 @@ const CalculateMoves = (event) => {
     let positionCaptureR = document.getElementById(capturePositionIdR);
     let positionCaptureL = document.getElementById(capturePositionIdL);
 
-    positionNew.classList.add("potential-move");
+    if (!positionNew.classList.contains("black-pawn")) {
+      positionNew.classList.add("potential-move");
+    } else {
+      console.log("can't move forward");
+    }
+
     if (
       currentPosition.id === "a2" ||
       currentPosition.id === "b2" ||
@@ -346,6 +361,8 @@ const CalculateMoves = (event) => {
 
   //Actually Moving the pieces
   if (currentPosition.classList.contains("potential-move")) {
+    currentPosition.classList.remove("white-pawn");
+    currentPosition.classList.remove("black-pawn");
     currentPosition.classList.remove("potential-move");
     positionOld.classList.remove(SelectedPiece);
     currentPosition.classList.add(SelectedPiece);
