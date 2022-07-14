@@ -94,53 +94,99 @@ const CalculateMoves = (event) => {
 
     //Downward Movement
     let down1 = findPosition.number + 8;
-    let findDown1 = SquaresData.find((newSquare) => newSquare.number === down1);
-    let down1Id = findDown1.coordinates;
-    let Down1 = document.getElementById(down1Id);
-    Down1.classList.add("potential-move");
+    if (down1 < 63) {
+      let findDown1 = SquaresData.find(
+        (newSquare) => newSquare.number === down1
+      );
+      let down1Id = findDown1.coordinates;
+      let Down1 = document.getElementById(down1Id);
+      Down1.classList.add("potential-move");
+    } else {
+      console.log("can't move down");
+    }
 
     let down2 = findPosition.number + 16;
-    let findDown2 = SquaresData.find((newSquare) => newSquare.number === down2);
-    let down2Id = findDown2.coordinates;
-    let Down2 = document.getElementById(down2Id);
-    Down2.classList.add("potential-move");
+    if (down2 < 63) {
+      let findDown2 = SquaresData.find(
+        (newSquare) => newSquare.number === down2
+      );
+      let down2Id = findDown2.coordinates;
+      let Down2 = document.getElementById(down2Id);
+      Down2.classList.add("potential-move");
+    } else {
+      console.log("can't move down");
+    }
 
     let down3 = findPosition.number + 24;
-    let findDown3 = SquaresData.find((newSquare) => newSquare.number === down3);
-    let down3Id = findDown3.coordinates;
-    let Down3 = document.getElementById(down3Id);
-    Down3.classList.add("potential-move");
+    if (down3 < 63) {
+      let findDown3 = SquaresData.find(
+        (newSquare) => newSquare.number === down3
+      );
+      let down3Id = findDown3.coordinates;
+      let Down3 = document.getElementById(down3Id);
+      Down3.classList.add("potential-move");
+    } else {
+      console.log("can't move down");
+    }
 
     let down4 = findPosition.number + 32;
-    let findDown4 = SquaresData.find((newSquare) => newSquare.number === down4);
-    let down4Id = findDown4.coordinates;
-    let Down4 = document.getElementById(down4Id);
-    Down4.classList.add("potential-move");
+    if (down4 < 63) {
+      let findDown4 = SquaresData.find(
+        (newSquare) => newSquare.number === down4
+      );
+      let down4Id = findDown4.coordinates;
+      let Down4 = document.getElementById(down4Id);
+      Down4.classList.add("potential-move");
+    } else {
+      console.log("can't move down");
+    }
 
     let down5 = findPosition.number + 40;
-    let findDown5 = SquaresData.find((newSquare) => newSquare.number === down5);
-    let down5Id = findDown5.coordinates;
-    let Down5 = document.getElementById(down5Id);
-    Down5.classList.add("potential-move");
+    if (down5 < 63) {
+      let findDown5 = SquaresData.find(
+        (newSquare) => newSquare.number === down5
+      );
+      let down5Id = findDown5.coordinates;
+      let Down5 = document.getElementById(down5Id);
+      Down5.classList.add("potential-move");
+    } else {
+      console.log("can't move down");
+    }
 
     let down6 = findPosition.number + 48;
-    let findDown6 = SquaresData.find((newSquare) => newSquare.number === down6);
-    let down6Id = findDown6.coordinates;
-    let Down6 = document.getElementById(down6Id);
-    Down6.classList.add("potential-move");
+    if (down6 < 63) {
+      let findDown6 = SquaresData.find(
+        (newSquare) => newSquare.number === down6
+      );
+      let down6Id = findDown6.coordinates;
+      let Down6 = document.getElementById(down6Id);
+      Down6.classList.add("potential-move");
+    } else {
+      console.log("can't move down");
+    }
 
     let down7 = findPosition.number + 56;
-    let findDown7 = SquaresData.find((newSquare) => newSquare.number === down7);
-    let down7Id = findDown7.coordinates;
-    let Down7 = document.getElementById(down7Id);
-    Down7.classList.add("potential-move");
+    if (down7 < 63) {
+      let findDown7 = SquaresData.find(
+        (newSquare) => newSquare.number === down7
+      );
+      let down7Id = findDown7.coordinates;
+      let Down7 = document.getElementById(down7Id);
+      Down7.classList.add("potential-move");
+    } else {
+      console.log("can't move down");
+    }
 
-    //Upwards Movement
-    let up1 = findPosition.number - 8; //THIS LINE IS THE ISSUE
-    let findUp1 = SquaresData.find((newSquare) => newSquare.number === up1);
-    let up1Id = findUp1.coordinates;
-    let Up1 = document.getElementById(up1Id);
-    Up1.classList.add("potential-move");
+    //Up Movement
+    let up1 = findPosition.number - 8;
+    if (up1 > -1) {
+      let findUp1 = SquaresData.find((newSquare) => newSquare.number === up1);
+      let up1Id = findUp1.coordinates;
+      let Up1 = document.getElementById(up1Id);
+      Up1.classList.add("potential-move");
+    } else {
+      console.log("cant move up");
+    }
 
     //Old Position
     let oldPositionId = findPosition.coordinates;
