@@ -188,6 +188,91 @@ const CalculateMoves = (event) => {
       console.log("cant move up");
     }
 
+    let up2 = findPosition.number - 16;
+    if (up2 > -1) {
+      let findUp2 = SquaresData.find((newSquare) => newSquare.number === up2);
+      let up2Id = findUp2.coordinates;
+      let Up2 = document.getElementById(up2Id);
+      Up2.classList.add("potential-move");
+    } else {
+      console.log("cant move up");
+    }
+
+    let up3 = findPosition.number - 24;
+    if (up3 > -1) {
+      let findUp3 = SquaresData.find((newSquare) => newSquare.number === up3);
+      let up3Id = findUp3.coordinates;
+      let Up3 = document.getElementById(up3Id);
+      Up3.classList.add("potential-move");
+    } else {
+      console.log("cant move up");
+    }
+
+    let up4 = findPosition.number - 32;
+    if (up4 > -1) {
+      let findUp4 = SquaresData.find((newSquare) => newSquare.number === up4);
+      let up4Id = findUp4.coordinates;
+      let Up4 = document.getElementById(up4Id);
+      Up4.classList.add("potential-move");
+    } else {
+      console.log("cant move up");
+    }
+
+    let up5 = findPosition.number - 40;
+    if (up5 > -1) {
+      let findUp5 = SquaresData.find((newSquare) => newSquare.number === up5);
+      let up5Id = findUp5.coordinates;
+      let Up5 = document.getElementById(up5Id);
+      Up5.classList.add("potential-move");
+    } else {
+      console.log("cant move up");
+    }
+
+    let up6 = findPosition.number - 48;
+    if (up6 > -1) {
+      let findUp6 = SquaresData.find((newSquare) => newSquare.number === up6);
+      let up6Id = findUp6.coordinates;
+      let Up6 = document.getElementById(up6Id);
+      Up6.classList.add("potential-move");
+    } else {
+      console.log("cant move up");
+    }
+
+    let up7 = findPosition.number - 56;
+    if (up7 > -1) {
+      let findUp7 = SquaresData.find((newSquare) => newSquare.number === up7);
+      let up7Id = findUp7.coordinates;
+      let Up7 = document.getElementById(up7Id);
+      Up7.classList.add("potential-move");
+    } else {
+      console.log("cant move up");
+    }
+
+    //Left Movement
+    let left1 = findPosition.number - 1;
+    if (left1 < 63) {
+      let findLeft1 = SquaresData.find(
+        (newSquare) => newSquare.number === left1
+      );
+      let left1Id = findLeft1.coordinates;
+      let Left1 = document.getElementById(left1Id);
+      Left1.classList.add("potential-move");
+    } else {
+      console.log("can't move left");
+    }
+
+    let left2 = findPosition.number - 2;
+    if (left2 < 63) {
+      let findLeft2 = SquaresData.find(
+        (newSquare) => newSquare.number === left2
+      );
+      let left2Id = findLeft2.coordinates;
+      let Left2 = document.getElementById(left2Id);
+      Left2.classList.add("potential-move");
+    } else {
+      console.log("can't move left");
+    }
+
     //Old Position
     let oldPositionId = findPosition.coordinates;
     positionOld = document.getElementById(oldPositionId);
