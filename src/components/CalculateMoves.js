@@ -106,82 +106,14 @@ const CalculateMoves = (event) => {
     positionOld = document.getElementById(oldPositionId);
 
     //Calling functions
-    amountOfMoves = 8;
-    moveQueen();
-    amountOfMoves = 16;
-    moveQueen();
-    amountOfMoves = 24;
-    moveQueen();
-    amountOfMoves = 32;
-    moveQueen();
-    amountOfMoves = 40;
-    moveQueen();
-    amountOfMoves = 48;
-    moveQueen();
-    amountOfMoves = 56;
-    moveQueen();
-    amountOfMoves = -8;
-    moveQueen();
-    amountOfMoves = -16;
-    moveQueen();
-    amountOfMoves = -24;
-    moveQueen();
-    amountOfMoves = -32;
-    moveQueen();
-    amountOfMoves = -40;
-    moveQueen();
-    amountOfMoves = -48;
-    moveQueen();
-    amountOfMoves = -56;
-    moveQueen();
-    if (
-      currentPosition.id.includes("a") ||
-      currentPosition.id.includes("b") ||
-      currentPosition.id.includes("c") ||
-      currentPosition.id.includes("d") ||
-      currentPosition.id.includes("e") ||
-      currentPosition.id.includes("f") ||
-      currentPosition.id.includes("g")
-    ) {
-      amountOfMoves = 1;
+    amountOfMoves = 0;
+    while (amountOfMoves < 56) {
+      amountOfMoves = amountOfMoves + 8;
       moveQueen();
     }
-    if (
-      currentPosition.id.includes("a") ||
-      currentPosition.id.includes("b") ||
-      currentPosition.id.includes("c") ||
-      currentPosition.id.includes("d") ||
-      currentPosition.id.includes("e") ||
-      currentPosition.id.includes("f")
-    ) {
-      amountOfMoves = 2;
-      moveQueen();
-    }
-    if (
-      currentPosition.id.includes("a") ||
-      currentPosition.id.includes("b") ||
-      currentPosition.id.includes("c") ||
-      currentPosition.id.includes("d") ||
-      currentPosition.id.includes("e")
-    ) {
-      amountOfMoves = 3;
-      moveQueen();
-    }
-    if (
-      currentPosition.id.includes("a") ||
-      currentPosition.id.includes("b") ||
-      currentPosition.id.includes("c") ||
-      currentPosition.id.includes("d")
-    ) {
-      amountOfMoves = 4;
-      moveQueen();
-    }
-    if (
-      currentPosition.id.includes("a") ||
-      currentPosition.id.includes("b") ||
-      currentPosition.id.includes("c")
-    ) {
-      amountOfMoves = 5;
+    amountOfMoves = 0;
+    while (amountOfMoves > -56) {
+      amountOfMoves = amountOfMoves - 8;
       moveQueen();
     }
   }
