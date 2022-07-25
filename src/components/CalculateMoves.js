@@ -134,34 +134,56 @@ const CalculateMoves = (event) => {
     moveQueen();
     amountOfMoves = -56;
     moveQueen();
-    amountOfMoves = 1;
-    moveQueen();
-    amountOfMoves = 2;
-    moveQueen();
-    amountOfMoves = 3;
-    moveQueen();
-    amountOfMoves = 4;
-    moveQueen();
-    amountOfMoves = 5;
-    moveQueen();
-    amountOfMoves = 6;
-    moveQueen();
-    amountOfMoves = 7;
-    moveQueen();
-    amountOfMoves = -1;
-    moveQueen();
-    amountOfMoves = -2;
-    moveQueen();
-    amountOfMoves = -3;
-    moveQueen();
-    amountOfMoves = -4;
-    moveQueen();
-    amountOfMoves = -5;
-    moveQueen();
-    amountOfMoves = -6;
-    moveQueen();
-    amountOfMoves = -7;
-    moveQueen();
+    if (
+      currentPosition.id.includes("a") ||
+      currentPosition.id.includes("b") ||
+      currentPosition.id.includes("c") ||
+      currentPosition.id.includes("d") ||
+      currentPosition.id.includes("e") ||
+      currentPosition.id.includes("f") ||
+      currentPosition.id.includes("g")
+    ) {
+      amountOfMoves = 1;
+      moveQueen();
+    }
+    if (
+      currentPosition.id.includes("a") ||
+      currentPosition.id.includes("b") ||
+      currentPosition.id.includes("c") ||
+      currentPosition.id.includes("d") ||
+      currentPosition.id.includes("e") ||
+      currentPosition.id.includes("f")
+    ) {
+      amountOfMoves = 2;
+      moveQueen();
+    }
+    if (
+      currentPosition.id.includes("a") ||
+      currentPosition.id.includes("b") ||
+      currentPosition.id.includes("c") ||
+      currentPosition.id.includes("d") ||
+      currentPosition.id.includes("e")
+    ) {
+      amountOfMoves = 3;
+      moveQueen();
+    }
+    if (
+      currentPosition.id.includes("a") ||
+      currentPosition.id.includes("b") ||
+      currentPosition.id.includes("c") ||
+      currentPosition.id.includes("d")
+    ) {
+      amountOfMoves = 4;
+      moveQueen();
+    }
+    if (
+      currentPosition.id.includes("a") ||
+      currentPosition.id.includes("b") ||
+      currentPosition.id.includes("c")
+    ) {
+      amountOfMoves = 5;
+      moveQueen();
+    }
   }
   //Black Queen END
 
