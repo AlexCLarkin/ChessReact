@@ -74,6 +74,97 @@ const CalculateMoves = (event) => {
 
   //Black pawn END
 
+  //Black Queen's movement
+  if (currentPosition.classList.contains("black-queen")) {
+    SelectedPiece = "black-queen";
+    console.log("Selected piece:" + SelectedPiece);
+
+    let findPosition = SquaresData.find(
+      (currentSquare) => currentSquare.coordinates === currentPosition.id
+    );
+
+    const moveQueen = () => {
+      let move = findPosition.number + amountOfMoves;
+      if (move < 63 && move > -1) {
+        let findMove = SquaresData.find(
+          (newSquare) => newSquare.number === move
+        );
+        let moveId = findMove.coordinates;
+        let Move = document.getElementById(moveId);
+        if (!Move.classList.contains("black-pawn")) {
+          Move.classList.add("potential-move");
+        } else {
+          console.log("can't move ");
+        }
+      } else {
+        console.log("can't move");
+      }
+    };
+
+    //Old Position
+    let oldPositionId = findPosition.coordinates;
+    positionOld = document.getElementById(oldPositionId);
+
+    //Calling functions
+    amountOfMoves = 8;
+    moveQueen();
+    amountOfMoves = 16;
+    moveQueen();
+    amountOfMoves = 24;
+    moveQueen();
+    amountOfMoves = 32;
+    moveQueen();
+    amountOfMoves = 40;
+    moveQueen();
+    amountOfMoves = 48;
+    moveQueen();
+    amountOfMoves = 56;
+    moveQueen();
+    amountOfMoves = -8;
+    moveQueen();
+    amountOfMoves = -16;
+    moveQueen();
+    amountOfMoves = -24;
+    moveQueen();
+    amountOfMoves = -32;
+    moveQueen();
+    amountOfMoves = -40;
+    moveQueen();
+    amountOfMoves = -48;
+    moveQueen();
+    amountOfMoves = -56;
+    moveQueen();
+    amountOfMoves = 1;
+    moveQueen();
+    amountOfMoves = 2;
+    moveQueen();
+    amountOfMoves = 3;
+    moveQueen();
+    amountOfMoves = 4;
+    moveQueen();
+    amountOfMoves = 5;
+    moveQueen();
+    amountOfMoves = 6;
+    moveQueen();
+    amountOfMoves = 7;
+    moveQueen();
+    amountOfMoves = -1;
+    moveQueen();
+    amountOfMoves = -2;
+    moveQueen();
+    amountOfMoves = -3;
+    moveQueen();
+    amountOfMoves = -4;
+    moveQueen();
+    amountOfMoves = -5;
+    moveQueen();
+    amountOfMoves = -6;
+    moveQueen();
+    amountOfMoves = -7;
+    moveQueen();
+  }
+  //Black Queen END
+
   //Calculates moves for white pawns
   if (
     currentPosition.classList.contains("white-pawn") &&
