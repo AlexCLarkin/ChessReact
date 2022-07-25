@@ -116,6 +116,100 @@ const CalculateMoves = (event) => {
       amountOfMoves = amountOfMoves - 8;
       moveQueen();
     }
+
+    if (currentPosition.id.includes("g")) {
+      amountOfMoves = 1;
+      moveQueen();
+    }
+    if (currentPosition.id.includes("f")) {
+      amountOfMoves = 0;
+      while (amountOfMoves < 2) {
+        amountOfMoves = amountOfMoves + 1;
+        moveQueen();
+      }
+    }
+    if (currentPosition.id.includes("e")) {
+      amountOfMoves = 0;
+      while (amountOfMoves < 3) {
+        amountOfMoves = amountOfMoves + 1;
+        moveQueen();
+      }
+    }
+    if (currentPosition.id.includes("d")) {
+      amountOfMoves = 0;
+      while (amountOfMoves < 4) {
+        amountOfMoves = amountOfMoves + 1;
+        moveQueen();
+      }
+    }
+    if (currentPosition.id.includes("c")) {
+      amountOfMoves = 0;
+      while (amountOfMoves < 5) {
+        amountOfMoves = amountOfMoves + 1;
+        moveQueen();
+      }
+    }
+    if (currentPosition.id.includes("a")) {
+      amountOfMoves = 0;
+      while (amountOfMoves < 6) {
+        amountOfMoves = amountOfMoves + 1;
+        moveQueen();
+      }
+    }
+    if (currentPosition.id.includes("a")) {
+      amountOfMoves = 0;
+      while (amountOfMoves < 7) {
+        amountOfMoves = amountOfMoves + 1;
+        moveQueen();
+      }
+    }
+
+    if (currentPosition.id.includes("b")) {
+      amountOfMoves = -1;
+      moveQueen();
+    }
+    if (currentPosition.id.includes("c")) {
+      amountOfMoves = 0;
+      while (amountOfMoves > -2) {
+        amountOfMoves = amountOfMoves - 1;
+        moveQueen();
+      }
+    }
+    if (currentPosition.id.includes("d")) {
+      amountOfMoves = 0;
+      while (amountOfMoves > -3) {
+        amountOfMoves = amountOfMoves - 1;
+        moveQueen();
+      }
+    }
+    if (currentPosition.id.includes("e")) {
+      amountOfMoves = 0;
+      while (amountOfMoves > -4) {
+        amountOfMoves = amountOfMoves - 1;
+        moveQueen();
+      }
+    }
+    if (currentPosition.id.includes("f")) {
+      amountOfMoves = 0;
+      while (amountOfMoves > -5) {
+        amountOfMoves = amountOfMoves - 1;
+        moveQueen();
+      }
+    }
+    if (currentPosition.id.includes("g")) {
+      amountOfMoves = 0;
+      while (amountOfMoves > -6) {
+        amountOfMoves = amountOfMoves - 1;
+        moveQueen();
+      }
+    }
+    if (currentPosition.id.includes("h")) {
+      amountOfMoves = 0;
+      while (amountOfMoves > -7) {
+        amountOfMoves = amountOfMoves - 1;
+        moveQueen();
+      }
+    }
   }
   //Black Queen END
 
