@@ -194,7 +194,7 @@ let SquaresData = [
   {
     color: 1,
     x: 8,
-    y: 5,
+    y: 4,
     coordinates: "84",
   },
   {
@@ -242,7 +242,7 @@ let SquaresData = [
   {
     color: 0,
     x: 8,
-    y: 4,
+    y: 3,
     coordinates: "83",
   },
   {

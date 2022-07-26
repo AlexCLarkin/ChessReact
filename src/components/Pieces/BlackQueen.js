@@ -18,6 +18,15 @@ var BlackPieces = [
   "black-knight",
 ];
 
+var WhitePieces = [
+  "white-pawn",
+  "white-bishop",
+  "white-king",
+  "white-queen",
+  "white-rook",
+  "white-knight",
+];
+
 const BlackQueen = (event) => {
   var currentPosition = event.target;
 
@@ -40,13 +49,20 @@ const BlackQueen = (event) => {
       let positionNewCoords = findNewPosition.coordinates;
       var positionNew = document.getElementById(positionNewCoords);
 
-      //making sure it cant pass through its own color pieces and adding potential move class
+      //making sure it cant pass through other pieces and adding potential move class
       if (
         BlackPieces.some((className) =>
           positionNew.classList.contains(className)
         )
       ) {
         stopMoving = true;
+      } else if (
+        WhitePieces.some((className) =>
+          positionNew.classList.contains(className)
+        )
+      ) {
+        stopMoving = true;
+        positionNew.classList.add("potential-move");
       } else {
         positionNew.classList.add("potential-move");
       }
