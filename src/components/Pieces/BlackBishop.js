@@ -1,10 +1,6 @@
 import react from "react";
 import SquaresData from "../CreateSquaresData";
-import CancelMove from "../CancelMove";
-import SwitchTurnstest from "../SwitchTurnsTest";
 
-var SelectedPiece;
-var positionOld;
 var moveCountery;
 var moveCounterx;
 var stopMoving = false;
@@ -27,7 +23,7 @@ var WhitePieces = [
   "white-knight",
 ];
 
-const BlackQueen = (event) => {
+const BlackBishop = (event) => {
   var currentPosition = event.target;
 
   const CalculatePieceMovement = () => {
@@ -69,50 +65,11 @@ const BlackQueen = (event) => {
     }
   };
 
-  //Black Queen Movement
-  if (currentPosition.classList.contains("black-queen")) {
-    SelectedPiece = "black-queen";
-    positionOld = document.getElementById(currentPosition.id);
-
+  //Black bishop Movement
+  if (currentPosition.classList.contains("black-bishop")) {
     var findPosition = SquaresData.find(
       (newSquare) => newSquare.coordinates === currentPosition.id
     );
-
-    //moving upwards
-    moveCountery = 0;
-    stopMoving = false;
-    while (moveCountery < 8 && stopMoving === false) {
-      moveCountery = moveCountery + 1;
-      moveCounterx = 0;
-      CalculatePieceMovement();
-    }
-
-    //moving downwards
-    moveCountery = 0;
-    stopMoving = false;
-    while (moveCountery > -8 && stopMoving === false) {
-      moveCountery = moveCountery - 1;
-      moveCounterx = 0;
-      CalculatePieceMovement();
-    }
-
-    //moving left
-    moveCounterx = 0;
-    stopMoving = false;
-    while (moveCounterx < 8 && stopMoving === false) {
-      moveCounterx = moveCounterx + 1;
-      moveCountery = 0;
-      CalculatePieceMovement();
-    }
-
-    //moving right
-    moveCounterx = 0;
-    stopMoving = false;
-    while (moveCounterx > -8 && stopMoving === false) {
-      moveCounterx = moveCounterx - 1;
-      moveCountery = 0;
-      CalculatePieceMovement();
-    }
 
     //moving up-right
     moveCounterx = 0;
@@ -156,4 +113,4 @@ const BlackQueen = (event) => {
   }
 };
 
-export default BlackQueen;
+export default BlackBishop;
