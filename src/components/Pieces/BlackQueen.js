@@ -7,13 +7,10 @@ var SelectedPiece;
 var positionOld;
 var moveCountery;
 var moveCounterx;
+var stopMoving = false;
 
 const BlackQueen = (event) => {
   var currentPosition = event.target;
-
-  if (!currentPosition.classList.contains("potential-move")) {
-    CancelMove();
-  }
 
   const CalculatePieceMovement = () => {
     //find new position by adding move counter to current position
@@ -32,8 +29,13 @@ const BlackQueen = (event) => {
     //adding potential move to possible movement squares
     if (findNewPosition) {
       let positionNewCoords = findNewPosition.coordinates;
-      let positionNew = document.getElementById(positionNewCoords);
-      positionNew.classList.add("potential-move");
+      var positionNew = document.getElementById(positionNewCoords);
+      if (positionNew.classList.contains("black-pawn")) {
+        console.log("no bueno me boyo");
+        stopMoving = true;
+      } else {
+        positionNew.classList.add("potential-move");
+      }
     }
   };
 
@@ -48,7 +50,8 @@ const BlackQueen = (event) => {
 
     //moving upwards
     moveCountery = 0;
-    while (moveCountery < 8) {
+    stopMoving = false;
+    while (moveCountery < 8 && stopMoving === false) {
       moveCountery = moveCountery + 1;
       moveCounterx = 0;
       CalculatePieceMovement();
@@ -56,7 +59,8 @@ const BlackQueen = (event) => {
 
     //moving downwards
     moveCountery = 0;
-    while (moveCountery > -8) {
+    stopMoving = false;
+    while (moveCountery > -8 && stopMoving === false) {
       moveCountery = moveCountery - 1;
       moveCounterx = 0;
       CalculatePieceMovement();
@@ -64,7 +68,8 @@ const BlackQueen = (event) => {
 
     //moving left
     moveCounterx = 0;
-    while (moveCounterx < 8) {
+    stopMoving = false;
+    while (moveCounterx < 8 && stopMoving === false) {
       moveCounterx = moveCounterx + 1;
       moveCountery = 0;
       CalculatePieceMovement();
@@ -72,7 +77,8 @@ const BlackQueen = (event) => {
 
     //moving right
     moveCounterx = 0;
-    while (moveCounterx > -8) {
+    stopMoving = false;
+    while (moveCounterx > -8 && stopMoving === false) {
       moveCounterx = moveCounterx - 1;
       moveCountery = 0;
       CalculatePieceMovement();
@@ -81,7 +87,8 @@ const BlackQueen = (event) => {
     //moving up-right
     moveCounterx = 0;
     moveCountery = 0;
-    while (moveCounterx > -8 && moveCountery < 8) {
+    stopMoving = false;
+    while (moveCounterx > -8 && moveCountery < 8 && stopMoving === false) {
       moveCounterx = moveCounterx - 1;
       moveCountery = moveCountery + 1;
       CalculatePieceMovement();
@@ -90,7 +97,8 @@ const BlackQueen = (event) => {
     //moving up-left
     moveCounterx = 0;
     moveCountery = 0;
-    while (moveCounterx > -8 && moveCountery < 8) {
+    stopMoving = false;
+    while (moveCounterx > -8 && moveCountery < 8 && stopMoving === false) {
       moveCounterx = moveCounterx + 1;
       moveCountery = moveCountery + 1;
       CalculatePieceMovement();
@@ -99,7 +107,8 @@ const BlackQueen = (event) => {
     //moving down-right
     moveCounterx = 0;
     moveCountery = 0;
-    while (moveCounterx < 8 && moveCountery > -8) {
+    stopMoving = false;
+    while (moveCounterx < 8 && moveCountery > -8 && stopMoving === false) {
       moveCounterx = moveCounterx - 1;
       moveCountery = moveCountery - 1;
       CalculatePieceMovement();
@@ -108,7 +117,8 @@ const BlackQueen = (event) => {
     //moving down-left
     moveCounterx = 0;
     moveCountery = 0;
-    while (moveCounterx > -8 && moveCountery > -8) {
+    stopMoving = false;
+    while (moveCounterx > -8 && moveCountery > -8 && stopMoving === false) {
       moveCounterx = moveCounterx + 1;
       moveCountery = moveCountery - 1;
       CalculatePieceMovement();
