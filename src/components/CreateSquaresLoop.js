@@ -17,7 +17,7 @@ const CreateSquareLoop = SquaresData.map((squares) => {
     <div
       id={squares.coordinates}
       className={classname}
-      key={squares.number}
+      key={squares.id}
       onClick={CalculateMoves}
     ></div>
   );

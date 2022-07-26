@@ -5,7 +5,8 @@ import SwitchTurnstest from "./SwitchTurnsTest";
 
 var SelectedPiece;
 var positionOld;
-var amountOfMoves;
+var moveCountery;
+var moveCounterx;
 
 const CalculateMoves = (event) => {
   var currentPosition = event.target;
@@ -15,261 +16,68 @@ const CalculateMoves = (event) => {
     CancelMove();
   }
 
-  //Calculates potential moves for black pawns
-  if (
-    currentPosition.classList.contains("black-pawn") &&
-    !currentPosition.classList.contains("potential-move")
-  ) {
-    SelectedPiece = "black-pawn";
-    console.log("Selected piece:" + SelectedPiece);
-
-    let findPosition = SquaresData.find(
-      (currentSquare) => currentSquare.coordinates === currentPosition.id
-    );
-
-    //move forward
-    const moveForwardPawn = () => {
-      let newPosition = findPosition.number + amountOfMoves;
-      let findnewPosition = SquaresData.find(
-        (newSquare) => newSquare.number === newPosition
-      );
-      let newPositionId = findnewPosition.coordinates;
-      let positionNew = document.getElementById(newPositionId);
-      if (!positionNew.classList.contains("white-pawn")) {
-        positionNew.classList.add("potential-move");
-      } else {
-        console.log("can't move forward");
-      }
-    };
-
-    //capture pawns on diagonals
-    const pawnsCapture = () => {
-      let CapturePosition = findPosition.number + amountOfMoves;
-      let findcapturePosition = SquaresData.find(
-        (newSquare) => newSquare.number === CapturePosition
-      );
-      let capturePositionId = findcapturePosition.coordinates;
-      let positionCapture = document.getElementById(capturePositionId);
-      if (positionCapture.classList.contains("white-pawn")) {
-        positionCapture.classList.add("potential-move");
-      }
-    };
-
-    //Old position
-    let oldPositionId = findPosition.coordinates;
-    positionOld = document.getElementById(oldPositionId);
-
-    //calling functions
-    amountOfMoves = 8;
-    moveForwardPawn();
-    if (currentPosition.id.includes(7)) {
-      amountOfMoves = 16;
-      moveForwardPawn();
-    }
-    amountOfMoves = 9;
-    pawnsCapture();
-    amountOfMoves = 7;
-    pawnsCapture();
-  }
-
-  //Black pawn END
-
-  //Black Queen's movement
   if (currentPosition.classList.contains("black-queen")) {
     SelectedPiece = "black-queen";
-    console.log("Selected piece:" + SelectedPiece);
+    positionOld = document.getElementById(currentPosition.id);
 
     let findPosition = SquaresData.find(
-      (currentSquare) => currentSquare.coordinates === currentPosition.id
+      (newSquare) => newSquare.coordinates === currentPosition.id
     );
 
     const moveQueen = () => {
-      let move = findPosition.number + amountOfMoves;
-      if (move < 63 && move > -1) {
-        let findMove = SquaresData.find(
-          (newSquare) => newSquare.number === move
-        );
-        let moveId = findMove.coordinates;
-        let Move = document.getElementById(moveId);
-        if (!Move.classList.contains("black-pawn")) {
-          Move.classList.add("potential-move");
-        } else {
-          console.log("can't move ");
-        }
-      } else {
-        console.log("can't move");
-      }
-    };
+      //find new position by adding move counter to current position
+      let newPositiony = findPosition.y + moveCounterx;
+      let newPositionx = findPosition.x + moveCountery;
 
-    //Old Position
-    let oldPositionId = findPosition.coordinates;
-    positionOld = document.getElementById(oldPositionId);
+      //turn the results into a string
+      let positionNewy = newPositiony + "";
+      let positionNewx = newPositionx + "";
 
-    //Calling functions
-    amountOfMoves = 0;
-    while (amountOfMoves < 56) {
-      amountOfMoves = amountOfMoves + 8;
-      moveQueen();
-    }
-    amountOfMoves = 0;
-    while (amountOfMoves > -56) {
-      amountOfMoves = amountOfMoves - 8;
-      moveQueen();
-    }
-
-    if (currentPosition.id.includes("g")) {
-      amountOfMoves = 1;
-      moveQueen();
-    }
-    if (currentPosition.id.includes("f")) {
-      amountOfMoves = 0;
-      while (amountOfMoves < 2) {
-        amountOfMoves = amountOfMoves + 1;
-        moveQueen();
-      }
-    }
-    if (currentPosition.id.includes("e")) {
-      amountOfMoves = 0;
-      while (amountOfMoves < 3) {
-        amountOfMoves = amountOfMoves + 1;
-        moveQueen();
-      }
-    }
-    if (currentPosition.id.includes("d")) {
-      amountOfMoves = 0;
-      while (amountOfMoves < 4) {
-        amountOfMoves = amountOfMoves + 1;
-        moveQueen();
-      }
-    }
-    if (currentPosition.id.includes("c")) {
-      amountOfMoves = 0;
-      while (amountOfMoves < 5) {
-        amountOfMoves = amountOfMoves + 1;
-        moveQueen();
-      }
-    }
-    if (currentPosition.id.includes("a")) {
-      amountOfMoves = 0;
-      while (amountOfMoves < 6) {
-        amountOfMoves = amountOfMoves + 1;
-        moveQueen();
-      }
-    }
-    if (currentPosition.id.includes("a")) {
-      amountOfMoves = 0;
-      while (amountOfMoves < 7) {
-        amountOfMoves = amountOfMoves + 1;
-        moveQueen();
-      }
-    }
-
-    if (currentPosition.id.includes("b")) {
-      amountOfMoves = -1;
-      moveQueen();
-    }
-    if (currentPosition.id.includes("c")) {
-      amountOfMoves = 0;
-      while (amountOfMoves > -2) {
-        amountOfMoves = amountOfMoves - 1;
-        moveQueen();
-      }
-    }
-    if (currentPosition.id.includes("d")) {
-      amountOfMoves = 0;
-      while (amountOfMoves > -3) {
-        amountOfMoves = amountOfMoves - 1;
-        moveQueen();
-      }
-    }
-    if (currentPosition.id.includes("e")) {
-      amountOfMoves = 0;
-      while (amountOfMoves > -4) {
-        amountOfMoves = amountOfMoves - 1;
-        moveQueen();
-      }
-    }
-    if (currentPosition.id.includes("f")) {
-      amountOfMoves = 0;
-      while (amountOfMoves > -5) {
-        amountOfMoves = amountOfMoves - 1;
-        moveQueen();
-      }
-    }
-    if (currentPosition.id.includes("g")) {
-      amountOfMoves = 0;
-      while (amountOfMoves > -6) {
-        amountOfMoves = amountOfMoves - 1;
-        moveQueen();
-      }
-    }
-    if (currentPosition.id.includes("h")) {
-      amountOfMoves = 0;
-      while (amountOfMoves > -7) {
-        amountOfMoves = amountOfMoves - 1;
-        moveQueen();
-      }
-    }
-  }
-  //Black Queen END
-
-  //Calculates moves for white pawns
-  if (
-    currentPosition.classList.contains("white-pawn") &&
-    !currentPosition.classList.contains("potential-move")
-  ) {
-    SelectedPiece = "white-pawn";
-    console.log("Selected piece:" + SelectedPiece);
-
-    let findPosition = SquaresData.find(
-      (currentSquare) => currentSquare.coordinates === currentPosition.id
-    );
-
-    //move forward
-    const moveForwardPawn = () => {
-      let newPosition = findPosition.number - amountOfMoves;
-      let findnewPosition = SquaresData.find(
-        (newSquare) => newSquare.number === newPosition
+      //find the new positions id by adding x and y
+      let newPosition = positionNewy + positionNewx;
+      let findNewPosition = SquaresData.find(
+        (newSquare) => newSquare.coordinates === newPosition
       );
-      let newPositionId = findnewPosition.coordinates;
-      let positionNew = document.getElementById(newPositionId);
-      if (!positionNew.classList.contains("black-pawn")) {
+      //adding potential move to possible movement squares
+      if (findNewPosition) {
+        let positionNewCoords = findNewPosition.coordinates;
+        let positionNew = document.getElementById(positionNewCoords);
         positionNew.classList.add("potential-move");
-      } else {
-        console.log("can't move forward");
       }
     };
 
-    //capture pawns on diagonals
-    const pawnsCapture = () => {
-      let CapturePosition = findPosition.number - amountOfMoves;
-      let findcapturePosition = SquaresData.find(
-        (newSquare) => newSquare.number === CapturePosition
-      );
-      let capturePositionId = findcapturePosition.coordinates;
-      let positionCapture = document.getElementById(capturePositionId);
-      if (positionCapture.classList.contains("black-pawn")) {
-        positionCapture.classList.add("potential-move");
-      }
-    };
-
-    //Old position
-    let oldPositionId = findPosition.coordinates;
-    positionOld = document.getElementById(oldPositionId);
-
-    //calling functions
-    amountOfMoves = 8;
-    moveForwardPawn();
-    if (currentPosition.id.includes(2)) {
-      amountOfMoves = 16;
-      moveForwardPawn();
+    //moving upwards
+    moveCountery = 0;
+    while (moveCountery < 8) {
+      moveCountery = moveCountery + 1;
+      moveCounterx = 0;
+      moveQueen();
     }
-    amountOfMoves = 9;
-    pawnsCapture();
-    amountOfMoves = 7;
-    pawnsCapture();
+
+    //moving downwards
+    moveCountery = 0;
+    while (moveCountery > -8) {
+      moveCountery = moveCountery - 1;
+      moveCounterx = 0;
+      moveQueen();
+    }
+
+    //moving left
+    moveCounterx = 0;
+    while (moveCounterx < 8) {
+      moveCounterx = moveCounterx + 1;
+      moveCountery = 0;
+      moveQueen();
+    }
+
+    //moving right
+    moveCounterx = 0;
+    while (moveCounterx > -8) {
+      moveCounterx = moveCounterx - 1;
+      moveCountery = 0;
+      moveQueen();
+    }
   }
-  // White pawn END
 
   //Actually moving the pieces
   if (currentPosition.classList.contains("potential-move")) {
