@@ -26,15 +26,15 @@ const CalculateMoves = (event) => {
 
     const moveQueen = () => {
       //find new position by adding move counter to current position
-      let newPositiony = findPosition.y + moveCounterx;
-      let newPositionx = findPosition.x + moveCountery;
+      let newPositiony = findPosition.y + moveCountery;
+      let newPositionx = findPosition.x + moveCounterx;
 
       //turn the results into a string
       let positionNewy = newPositiony + "";
       let positionNewx = newPositionx + "";
 
       //find the new positions id by adding x and y
-      let newPosition = positionNewy + positionNewx;
+      let newPosition = positionNewx + positionNewy;
       let findNewPosition = SquaresData.find(
         (newSquare) => newSquare.coordinates === newPosition
       );
