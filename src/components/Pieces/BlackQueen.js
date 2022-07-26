@@ -9,6 +9,15 @@ var moveCountery;
 var moveCounterx;
 var stopMoving = false;
 
+var BlackPieces = [
+  "black-pawn",
+  "black-bishop",
+  "black-king",
+  "black-queen",
+  "black-rook",
+  "black-knight",
+];
+
 const BlackQueen = (event) => {
   var currentPosition = event.target;
 
@@ -26,12 +35,17 @@ const BlackQueen = (event) => {
     let findNewPosition = SquaresData.find(
       (newSquare) => newSquare.coordinates === newPosition
     );
-    //adding potential move to possible movement squares
+    //finding the new position
     if (findNewPosition) {
       let positionNewCoords = findNewPosition.coordinates;
       var positionNew = document.getElementById(positionNewCoords);
-      if (positionNew.classList.contains("black-pawn")) {
-        console.log("no bueno me boyo");
+
+      //making sure it cant pass through its own color pieces and adding potential move class
+      if (
+        BlackPieces.some((className) =>
+          positionNew.classList.contains(className)
+        )
+      ) {
         stopMoving = true;
       } else {
         positionNew.classList.add("potential-move");
