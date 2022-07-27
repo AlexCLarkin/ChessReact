@@ -7,6 +7,12 @@ import BlackPawn from "./Pieces/BlackPawn";
 import BlackRook from "./Pieces/BlackRook";
 import BlackKing from "./Pieces/BlackKing";
 import BlackKnight from "./Pieces/BlackKnight";
+import WhiteQueen from "./Pieces/WhiteQueen";
+import WhiteBishop from "./Pieces/WhiteBishop";
+import WhiteKing from "./Pieces/WhiteKing";
+import WhitePawn from "./Pieces/WhitePawn";
+import WhiteRook from "./Pieces/WhiteRook";
+import WhiteKnight from "./Pieces/WhiteKnight";
 
 var SelectedPiece;
 var positionOld;
@@ -17,40 +23,124 @@ const CalculateMoves = (event) => {
     CancelMove();
   }
 
-  if (currentPosition.classList.contains("black-queen")) {
+  //movement for black queen
+  if (
+    currentPosition.classList.contains("black-queen") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
     BlackQueen(event);
     positionOld = document.getElementById(currentPosition.id);
     SelectedPiece = "black-queen";
   }
 
-  if (currentPosition.classList.contains("black-bishop")) {
+  //movement for black bishop
+  if (
+    currentPosition.classList.contains("black-bishop") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
     BlackBishop(event);
     positionOld = document.getElementById(currentPosition.id);
     SelectedPiece = "black-bishop";
   }
 
-  if (currentPosition.classList.contains("black-pawn")) {
+  //movement for black pawn
+  if (
+    currentPosition.classList.contains("black-pawn") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
     BlackPawn(event);
     positionOld = document.getElementById(currentPosition.id);
     SelectedPiece = "black-pawn";
   }
 
-  if (currentPosition.classList.contains("black-rook")) {
+  //movement for black-rook
+  if (
+    currentPosition.classList.contains("black-rook") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
     BlackRook(event);
     positionOld = document.getElementById(currentPosition.id);
     SelectedPiece = "black-rook";
   }
 
-  if (currentPosition.classList.contains("black-king")) {
+  //movement for black king
+  if (
+    currentPosition.classList.contains("black-king") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
     BlackKing(event);
     positionOld = document.getElementById(currentPosition.id);
     SelectedPiece = "black-king";
   }
 
-  if (currentPosition.classList.contains("black-knight")) {
+  //movement for black knight
+  if (
+    currentPosition.classList.contains("black-knight") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
     BlackKnight(event);
     positionOld = document.getElementById(currentPosition.id);
     SelectedPiece = "black-knight";
+  }
+
+  //movement for white queen
+  if (
+    currentPosition.classList.contains("white-queen") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
+    WhiteQueen(event);
+    positionOld = document.getElementById(currentPosition.id);
+    SelectedPiece = "white-queen";
+  }
+
+  //movement for white bishop
+  if (
+    currentPosition.classList.contains("white-bishop") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
+    WhiteBishop(event);
+    positionOld = document.getElementById(currentPosition.id);
+    SelectedPiece = "white-bishop";
+  }
+
+  //movemen for white king
+  if (
+    currentPosition.classList.contains("white-king") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
+    WhiteKing(event);
+    positionOld = document.getElementById(currentPosition.id);
+    SelectedPiece = "white-king";
+  }
+
+  //movement for white pawn
+  if (
+    currentPosition.classList.contains("white-pawn") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
+    WhitePawn(event);
+    positionOld = document.getElementById(currentPosition.id);
+    SelectedPiece = "white-pawn";
+  }
+
+  //movement for white rook
+  if (
+    currentPosition.classList.contains("white-rook") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
+    WhiteRook(event);
+    positionOld = document.getElementById(currentPosition.id);
+    SelectedPiece = "white-rook";
+  }
+
+  //movement for white knight
+  if (
+    currentPosition.classList.contains("white-knight") &&
+    !currentPosition.classList.contains("potential-move")
+  ) {
+    WhiteKnight(event);
+    positionOld = document.getElementById(currentPosition.id);
+    SelectedPiece = "white-knight";
   }
 
   if (currentPosition.classList.contains("potential-move")) {
@@ -60,7 +150,13 @@ const CalculateMoves = (event) => {
       "white-king",
       "white-rook",
       "white-queen",
-      "white-knight"
+      "white-knight",
+      "black-pawn",
+      "black-bishop",
+      "black-king",
+      "black-rook",
+      "black-queen",
+      "black-knight"
     );
     currentPosition.classList.remove("potential-move");
     positionOld.classList.remove(SelectedPiece);
