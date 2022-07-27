@@ -6,6 +6,7 @@ import BlackQueen from "./Pieces/BlackQueen";
 import BlackPawn from "./Pieces/BlackPawn";
 import BlackRook from "./Pieces/BlackRook";
 import BlackKing from "./Pieces/BlackKing";
+import BlackKnight from "./Pieces/BlackKnight";
 
 var SelectedPiece;
 var positionOld;
@@ -44,6 +45,12 @@ const CalculateMoves = (event) => {
     BlackKing(event);
     positionOld = document.getElementById(currentPosition.id);
     SelectedPiece = "black-king";
+  }
+
+  if (currentPosition.classList.contains("black-knight")) {
+    BlackKnight(event);
+    positionOld = document.getElementById(currentPosition.id);
+    SelectedPiece = "black-knight";
   }
 
   if (currentPosition.classList.contains("potential-move")) {
