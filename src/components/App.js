@@ -11,7 +11,7 @@ class App extends React.Component {
         <button id="start-button" className="start-button" onClick={StartGame}>
           Start Game
         </button>
-        <button onClick={SwitchTurnstest}>switch turns</button>
+        <p id="turn-display"></p>
         <ChessBoard />
       </div>
     );

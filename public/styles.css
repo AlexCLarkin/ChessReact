@@ -118,11 +118,18 @@ body {
 
 .not-clickable {
     pointer-events: none;
-    color: blue;
 }
 
 .potential-move {
     background-color: lightblue;
     cursor: pointer;
     pointer-events: all;
+}
+
+.whites-turn {
+    content: "White's turn";
+}
+
+.blacks-turn {
+    content: "Black's turn";
 }

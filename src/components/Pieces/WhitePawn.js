@@ -68,7 +68,7 @@ const WhitePawn = (event) => {
           console.log("no piece to capture");
         }
       } else if (
-        WhitePieces.some((className) =>
+        BlackPieces.some((className) =>
           positionNew.classList.contains(className)
         )
       ) {
