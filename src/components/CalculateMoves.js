@@ -1,4 +1,3 @@
-import react from "react";
 import CancelMove from "./CancelMove";
 import SwitchTurnstest from "./SwitchTurnsTest";
 import BlackBishop from "./Pieces/BlackBishop";
@@ -17,6 +16,9 @@ import DisplayTakenPieces from "./DisplayTakenPieces";
 
 var SelectedPiece;
 var positionOld;
+
+var Row8 = ["88", "78", "68", "58", "48", "38", "28", "18"];
+var Row1 = ["81", "71", "61", "51", "41", "31", "21", "11"];
 
 const CalculateMoves = (event) => {
   var currentPosition = event.target;
@@ -162,7 +164,19 @@ const CalculateMoves = (event) => {
     DisplayTakenPieces();
     currentPosition.classList.remove("potential-move");
     positionOld.classList.remove(SelectedPiece);
-    currentPosition.classList.add(SelectedPiece);
+    if (
+      Row8.some((className) => currentPosition.id === className) &&
+      SelectedPiece === "white-pawn"
+    ) {
+      currentPosition.classList.add("white-queen");
+    } else if (
+      Row1.some((className) => currentPosition.id === className) &&
+      SelectedPiece === "black-pawn"
+    ) {
+      currentPosition.classList.add("black-queen");
+    } else {
+      currentPosition.classList.add(SelectedPiece);
+    }
     SelectedPiece = "none";
     CancelMove();
     SwitchTurnstest();

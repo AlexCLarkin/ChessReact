@@ -1,10 +1,5 @@
-import react from "react";
 import SquaresData from "../CreateSquaresData";
-import CancelMove from "../CancelMove";
-import SwitchTurnstest from "../SwitchTurnsTest";
 
-var SelectedPiece;
-var positionOld;
 var moveCountery;
 var moveCounterx;
 var stopMoving = false;
@@ -71,9 +66,6 @@ const BlackQueen = (event) => {
 
   //Black Queen Movement
   if (currentPosition.classList.contains("black-queen")) {
-    SelectedPiece = "black-queen";
-    positionOld = document.getElementById(currentPosition.id);
-
     var findPosition = SquaresData.find(
       (newSquare) => newSquare.coordinates === currentPosition.id
     );

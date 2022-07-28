@@ -1,4 +1,3 @@
-import react from "react";
 import SquaresData from "../CreateSquaresData";
 
 var moveCountery;

@@ -1,9 +1,7 @@
-import react from "react";
 import SquaresData from "../CreateSquaresData";
 
 var moveCountery;
 var moveCounterx;
-var stopMoving = false;
 
 var BlackPieces = [
   "black-pawn",
@@ -51,13 +49,11 @@ const BlackKing = (event) => {
           positionNew.classList.contains(className)
         )
       ) {
-        stopMoving = true;
       } else if (
         WhitePieces.some((className) =>
           positionNew.classList.contains(className)
         )
       ) {
-        stopMoving = true;
         positionNew.classList.add("potential-move");
       } else {
         positionNew.classList.add("potential-move");
@@ -73,28 +69,24 @@ const BlackKing = (event) => {
 
     //moving upwards
     moveCountery = 0;
-    stopMoving = false;
     moveCountery = moveCountery + 1;
     moveCounterx = 0;
     CalculatePieceMovement();
 
     //moving downwards
     moveCountery = 0;
-    stopMoving = false;
     moveCountery = moveCountery - 1;
     moveCounterx = 0;
     CalculatePieceMovement();
 
     //moving left
     moveCounterx = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx + 1;
     moveCountery = 0;
     CalculatePieceMovement();
 
     //moving right
     moveCounterx = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx - 1;
     moveCountery = 0;
     CalculatePieceMovement();
@@ -102,7 +94,6 @@ const BlackKing = (event) => {
     //moving up-right
     moveCounterx = 0;
     moveCountery = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx - 1;
     moveCountery = moveCountery + 1;
     CalculatePieceMovement();
@@ -110,7 +101,6 @@ const BlackKing = (event) => {
     //moving up-left
     moveCounterx = 0;
     moveCountery = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx + 1;
     moveCountery = moveCountery + 1;
     CalculatePieceMovement();
@@ -118,7 +108,6 @@ const BlackKing = (event) => {
     //moving down-right
     moveCounterx = 0;
     moveCountery = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx - 1;
     moveCountery = moveCountery - 1;
     CalculatePieceMovement();
@@ -126,7 +115,6 @@ const BlackKing = (event) => {
     //moving down-left
     moveCounterx = 0;
     moveCountery = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx + 1;
     moveCountery = moveCountery - 1;
     CalculatePieceMovement();

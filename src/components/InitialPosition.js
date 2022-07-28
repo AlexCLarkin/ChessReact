@@ -1,5 +1,3 @@
-import React from "react";
-
 const InitialPosition = () => {
   document.getElementById("88").classList.add("black-rook");
   document.getElementById("78").classList.add("black-knight");

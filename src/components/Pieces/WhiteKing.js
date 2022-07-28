@@ -1,11 +1,7 @@
-import react from "react";
 import SquaresData from "../CreateSquaresData";
-import CancelMove from "../CancelMove";
-import SwitchTurnstest from "../SwitchTurnsTest";
 
 var moveCountery;
 var moveCounterx;
-var stopMoving = false;
 
 var BlackPieces = [
   "black-pawn",
@@ -53,13 +49,11 @@ const WhiteKing = (event) => {
           positionNew.classList.contains(className)
         )
       ) {
-        stopMoving = true;
       } else if (
         BlackPieces.some((className) =>
           positionNew.classList.contains(className)
         )
       ) {
-        stopMoving = true;
         positionNew.classList.add("potential-move");
       } else {
         positionNew.classList.add("potential-move");
@@ -75,28 +69,24 @@ const WhiteKing = (event) => {
 
     //moving upwards
     moveCountery = 0;
-    stopMoving = false;
     moveCountery = moveCountery + 1;
     moveCounterx = 0;
     CalculatePieceMovement();
 
     //moving downwards
     moveCountery = 0;
-    stopMoving = false;
     moveCountery = moveCountery - 1;
     moveCounterx = 0;
     CalculatePieceMovement();
 
     //moving left
     moveCounterx = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx + 1;
     moveCountery = 0;
     CalculatePieceMovement();
 
     //moving right
     moveCounterx = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx - 1;
     moveCountery = 0;
     CalculatePieceMovement();
@@ -104,7 +94,6 @@ const WhiteKing = (event) => {
     //moving up-right
     moveCounterx = 0;
     moveCountery = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx - 1;
     moveCountery = moveCountery + 1;
     CalculatePieceMovement();
@@ -112,7 +101,6 @@ const WhiteKing = (event) => {
     //moving up-left
     moveCounterx = 0;
     moveCountery = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx + 1;
     moveCountery = moveCountery + 1;
     CalculatePieceMovement();
@@ -120,7 +108,6 @@ const WhiteKing = (event) => {
     //moving down-right
     moveCounterx = 0;
     moveCountery = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx - 1;
     moveCountery = moveCountery - 1;
     CalculatePieceMovement();
@@ -128,7 +115,6 @@ const WhiteKing = (event) => {
     //moving down-left
     moveCounterx = 0;
     moveCountery = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx + 1;
     moveCountery = moveCountery - 1;
     CalculatePieceMovement();

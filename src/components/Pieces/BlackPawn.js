@@ -1,11 +1,7 @@
-import react from "react";
 import SquaresData from "../CreateSquaresData";
 
-var SelectedPiece;
-var positionOld;
 var moveCountery;
 var moveCounterx;
-var stopMoving = false;
 var capturePiece;
 
 var BlackPieces = [
@@ -56,7 +52,6 @@ const BlackPawn = (event) => {
           positionNew.classList.contains(className)
         )
       ) {
-        stopMoving = true;
       } else if (capturePiece === true) {
         if (
           WhitePieces.some((className) =>
@@ -72,7 +67,6 @@ const BlackPawn = (event) => {
           positionNew.classList.contains(className)
         )
       ) {
-        stopMoving = true;
       } else {
         positionNew.classList.add("potential-move");
       }
@@ -81,15 +75,11 @@ const BlackPawn = (event) => {
 
   //Black Pawn Movement
   if (currentPosition.classList.contains("black-pawn")) {
-    SelectedPiece = "black-pawn";
-    positionOld = document.getElementById(currentPosition.id);
-
     var findPosition = SquaresData.find(
       (newSquare) => newSquare.coordinates === currentPosition.id
     );
 
     //moving downwards
-    stopMoving = false;
     if (
       startingPosition.some((className) =>
         currentPosition.id.includes(className)
@@ -115,7 +105,6 @@ const BlackPawn = (event) => {
     //moving down-right
     moveCounterx = 0;
     moveCountery = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx - 1;
     moveCountery = moveCountery - 1;
     capturePiece = true;
@@ -124,7 +113,6 @@ const BlackPawn = (event) => {
     //moving down-left
     moveCounterx = 0;
     moveCountery = 0;
-    stopMoving = false;
     moveCounterx = moveCounterx + 1;
     moveCountery = moveCountery - 1;
     capturePiece = true;

@@ -1,11 +1,7 @@
-import react from "react";
 import SquaresData from "../CreateSquaresData";
-import CancelMove from "../CancelMove";
-import SwitchTurnstest from "../SwitchTurnsTest";
 
 var moveCountery;
 var moveCounterx;
-var stopMoving = false;
 
 var BlackPieces = [
   "black-pawn",
@@ -53,13 +49,11 @@ const WhiteKnight = (event) => {
           positionNew.classList.contains(className)
         )
       ) {
-        stopMoving = true;
       } else if (
         BlackPieces.some((className) =>
           positionNew.classList.contains(className)
         )
       ) {
-        stopMoving = true;
         positionNew.classList.add("potential-move");
       } else {
         positionNew.classList.add("potential-move");
@@ -76,7 +70,6 @@ const WhiteKnight = (event) => {
     //moving down 2 and right 1
     moveCountery = 0;
     moveCounterx = 0;
-    stopMoving = false;
     moveCountery = moveCountery - 2;
     moveCounterx = moveCounterx - 1;
     CalculatePieceMovement();
@@ -84,7 +77,6 @@ const WhiteKnight = (event) => {
     //moving down 1 and right 2
     moveCountery = 0;
     moveCounterx = 0;
-    stopMoving = false;
     moveCountery = moveCountery - 1;
     moveCounterx = moveCounterx - 2;
     CalculatePieceMovement();
@@ -92,7 +84,6 @@ const WhiteKnight = (event) => {
     //moving down 2 and left 1
     moveCountery = 0;
     moveCounterx = 0;
-    stopMoving = false;
     moveCountery = moveCountery - 2;
     moveCounterx = moveCounterx + 1;
     CalculatePieceMovement();
@@ -100,7 +91,6 @@ const WhiteKnight = (event) => {
     //moving down 1 and left 2
     moveCountery = 0;
     moveCounterx = 0;
-    stopMoving = false;
     moveCountery = moveCountery - 1;
     moveCounterx = moveCounterx + 2;
     CalculatePieceMovement();
@@ -108,7 +98,6 @@ const WhiteKnight = (event) => {
     //moving up 2 and right 1
     moveCountery = 0;
     moveCounterx = 0;
-    stopMoving = false;
     moveCountery = moveCountery + 2;
     moveCounterx = moveCounterx - 1;
     CalculatePieceMovement();
@@ -116,7 +105,6 @@ const WhiteKnight = (event) => {
     //moving up 1 and right 2
     moveCountery = 0;
     moveCounterx = 0;
-    stopMoving = false;
     moveCountery = moveCountery + 1;
     moveCounterx = moveCounterx - 2;
     CalculatePieceMovement();
@@ -124,7 +112,6 @@ const WhiteKnight = (event) => {
     //moving up 2 and left 1
     moveCountery = 0;
     moveCounterx = 0;
-    stopMoving = false;
     moveCountery = moveCountery + 2;
     moveCounterx = moveCounterx + 1;
     CalculatePieceMovement();
@@ -132,7 +119,6 @@ const WhiteKnight = (event) => {
     //moving up1 and left 2
     moveCountery = 0;
     moveCounterx = 0;
-    stopMoving = false;
     moveCountery = moveCountery + 1;
     moveCounterx = moveCounterx + 2;
     CalculatePieceMovement();

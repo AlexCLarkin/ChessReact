@@ -1,4 +1,3 @@
-import React from "react";
 import App from "./App";
 import InitialPosition from "./InitialPosition";
 import Turns from "./Turns";

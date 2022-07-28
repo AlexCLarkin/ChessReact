@@ -1,7 +1,4 @@
-import react from "react";
 import SquaresData from "../CreateSquaresData";
-import CancelMove from "../CancelMove";
-import SwitchTurnstest from "../SwitchTurnsTest";
 
 var moveCountery;
 var moveCounterx;
