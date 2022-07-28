@@ -16,6 +16,10 @@ const Turns = () => {
     document.getElementById("turn-display").classList.remove("white-text");
     document.body.classList.add("whites-turn");
     document.body.classList.remove("blacks-turn");
+    document.getElementById("display-taken-pieces").classList.add("black-text");
+    document
+      .getElementById("display-taken-pieces")
+      .classList.remove("white-text");
   } else if (App.WhitesTurn === false) {
     BlackPieces.forEach((black) => black.classList.remove("not-clickable"));
     WhitePieces.forEach((white) => white.classList.add("not-clickable"));
@@ -24,6 +28,10 @@ const Turns = () => {
     document.getElementById("turn-display").classList.add("white-text");
     document.body.classList.add("blacks-turn");
     document.body.classList.remove("whites-turn");
+    document
+      .getElementById("display-taken-pieces")
+      .classList.remove("black-text");
+    document.getElementById("display-taken-pieces").classList.add("white-text");
   }
 };
 

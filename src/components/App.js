@@ -18,7 +18,7 @@ class App extends React.Component {
           <p id="turn-display" className="turn-display"></p>
           <ChessBoard />
         </div>
-        <div className="display-taken-pieces">
+        <div id="display-taken-pieces">
           <p>Taken Pieces:</p>
           <div>
             <p id="white-pawns-display"></p>
