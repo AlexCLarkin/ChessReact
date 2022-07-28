@@ -160,3 +160,11 @@ body {
 .black-text {
     color: #000;
 }
+
+#background {
+    display: flex;
+}
+
+.display-taken-pieces {
+    margin-left: 20px;
+}

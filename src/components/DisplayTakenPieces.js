@@ -2,6 +2,7 @@ import react from "react";
 
 const DisplayTakenPieces = () => {
   var WhitePieces = "";
+  var BlackPieces = "";
 
   let countWhitePawns = document.querySelectorAll(".white-pawn").length;
   if (countWhitePawns === 7) {
@@ -69,6 +70,74 @@ const DisplayTakenPieces = () => {
   if (countWhiteRooks === 0) {
     WhitePieces = WhitePieces + "♖♖";
     document.getElementById("white-pieces-display").innerHTML = WhitePieces;
+  }
+
+  let countBlackPawns = document.querySelectorAll(".black-pawn").length;
+  if (countBlackPawns === 7) {
+    document.getElementById("black-pawns-display").innerHTML = "♟";
+  }
+  if (countBlackPawns === 6) {
+    document.getElementById("black-pawns-display").innerHTML = "♟♟";
+  }
+  if (countBlackPawns === 5) {
+    document.getElementById("black-pawns-display").innerHTML = "♟♟♟";
+  }
+  if (countBlackPawns === 4) {
+    document.getElementById("black-pawns-display").innerHTML = "♟♟♟♟";
+  }
+  if (countBlackPawns === 3) {
+    document.getElementById("black-pawns-display").innerHTML = "♟♟♟♟♟";
+  }
+  if (countBlackPawns === 2) {
+    document.getElementById("black-pawns-display").innerHTML = "♟♟♟♟♟♟";
+  }
+  if (countBlackPawns === 1) {
+    document.getElementById("black-pawns-display").innerHTML = "♟♟♟♟♟♟♟";
+  }
+  if (countBlackPawns === 0) {
+    document.getElementById("black-pawns-display").innerHTML = "♟♟♟♟♟♟♟♟";
+  }
+
+  let countBlackQueens = document.querySelectorAll(".black-queen").length;
+  if (countBlackQueens === 0) {
+    BlackPieces = BlackPieces + "♛";
+    document.getElementById("black-pieces-display").innerHTML = BlackPieces;
+  }
+
+  let countBlackkings = document.querySelectorAll(".black-king").length;
+  if (countBlackkings === 0) {
+    BlackPieces = BlackPieces + "♚";
+    document.getElementById("black-pieces-display").innerHTML = BlackPieces;
+  }
+
+  let countBlackBishops = document.querySelectorAll(".black-bishop").length;
+  if (countBlackBishops === 1) {
+    BlackPieces = BlackPieces + "♝";
+    document.getElementById("black-pieces-display").innerHTML = BlackPieces;
+  }
+  if (countBlackBishops === 0) {
+    BlackPieces = BlackPieces + "♝♝";
+    document.getElementById("black-pieces-display").innerHTML = BlackPieces;
+  }
+
+  let countBlackKnights = document.querySelectorAll(".black-knight").length;
+  if (countBlackKnights === 1) {
+    BlackPieces = BlackPieces + "♞";
+    document.getElementById("black-pieces-display").innerHTML = BlackPieces;
+  }
+  if (countBlackKnights === 0) {
+    BlackPieces = BlackPieces + "♞♞";
+    document.getElementById("black-pieces-display").innerHTML = BlackPieces;
+  }
+
+  let countBlackRooks = document.querySelectorAll(".black-rook").length;
+  if (countBlackRooks === 1) {
+    BlackPieces = BlackPieces + "♜";
+    document.getElementById("white-pieces-display").innerHTML = BlackPieces;
+  }
+  if (countBlackRooks === 0) {
+    BlackPieces = BlackPieces + "♜♜";
+    document.getElementById("Black-pieces-display").innerHTML = BlackPieces;
   }
 };
 
