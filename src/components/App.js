@@ -2,7 +2,6 @@ import React from "react";
 
 import ChessBoard from "./ChessBoard";
 import StartGame from "./StartGame";
-import SwitchTurnstest from "./SwitchTurnsTest";
 
 class App extends React.Component {
   render() {
@@ -13,6 +12,11 @@ class App extends React.Component {
         </button>
         <p id="turn-display" className="turn-display"></p>
         <ChessBoard />
+        <div>
+          <p>Taken Pieces:</p>
+          <p id="white-pawns-display"></p>
+          <p id="white-pieces-display"></p>
+        </div>
       </div>
     );
   }

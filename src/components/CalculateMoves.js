@@ -13,6 +13,7 @@ import WhiteKing from "./Pieces/WhiteKing";
 import WhitePawn from "./Pieces/WhitePawn";
 import WhiteRook from "./Pieces/WhiteRook";
 import WhiteKnight from "./Pieces/WhiteKnight";
+import DisplayTakenPieces from "./DisplayTakenPieces";
 
 var SelectedPiece;
 var positionOld;
@@ -158,6 +159,7 @@ const CalculateMoves = (event) => {
       "black-queen",
       "black-knight"
     );
+    DisplayTakenPieces();
     currentPosition.classList.remove("potential-move");
     positionOld.classList.remove(SelectedPiece);
     currentPosition.classList.add(SelectedPiece);
