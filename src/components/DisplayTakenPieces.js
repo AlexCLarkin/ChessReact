@@ -133,7 +133,7 @@ const DisplayTakenPieces = () => {
   let countBlackRooks = document.querySelectorAll(".black-rook").length;
   if (countBlackRooks === 1) {
     BlackPieces = BlackPieces + "♜";
-    document.getElementById("white-pieces-display").innerHTML = BlackPieces;
+    document.getElementById("black-pieces-display").innerHTML = BlackPieces;
   }
   if (countBlackRooks === 0) {
     BlackPieces = BlackPieces + "♜♜";
