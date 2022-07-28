@@ -7,11 +7,11 @@ import SwitchTurnstest from "./SwitchTurnsTest";
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div id="background">
         <button id="start-button" className="start-button" onClick={StartGame}>
           Start Game
         </button>
-        <p id="turn-display"></p>
+        <p id="turn-display" className="turn-display"></p>
         <ChessBoard />
       </div>
     );

@@ -12,10 +12,18 @@ const Turns = () => {
     BlackPieces.forEach((black) => black.classList.add("not-clickable"));
     WhitePieces.forEach((white) => white.classList.remove("not-clickable"));
     document.getElementById("turn-display").innerHTML = "White's turn";
+    document.getElementById("turn-display").classList.add("black-text");
+    document.getElementById("turn-display").classList.remove("white-text");
+    document.body.classList.add("whites-turn");
+    document.body.classList.remove("blacks-turn");
   } else if (App.WhitesTurn === false) {
     BlackPieces.forEach((black) => black.classList.remove("not-clickable"));
     WhitePieces.forEach((white) => white.classList.add("not-clickable"));
     document.getElementById("turn-display").innerHTML = "Black's turn";
+    document.getElementById("turn-display").classList.remove("black-text");
+    document.getElementById("turn-display").classList.add("white-text");
+    document.body.classList.add("blacks-turn");
+    document.body.classList.remove("whites-turn");
   }
 };
 

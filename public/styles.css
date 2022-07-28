@@ -126,10 +126,37 @@ body {
     pointer-events: all;
 }
 
+.turn-display {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+}
+
 .whites-turn {
-    content: "White's turn";
+    background-color: #fff;
+    animation: fadeToBlack 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeToBlack {
+    from { background-color: rgb(74, 74, 74);}
+    to {background-color: #fff;}
 }
 
 .blacks-turn {
-    content: "Black's turn";
+    background-color: #fff;
+    animation: fadeToWhite 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeToWhite {
+    from { background-color: #fff;}
+    to {background-color: rgb(74, 74, 74);}
+}
+
+.white-text {
+    color: #fff;
+}
+
+.black-text {
+    color: #000;
 }
